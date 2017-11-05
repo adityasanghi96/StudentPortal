@@ -10,8 +10,7 @@
 <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-	<div class="navbar-header">
-	  <a class="navbar-brand" href="#">Student Portal</a>
+	<div class="navbar-header">Student Portal</a>
 	</div>
 	<ul class="nav navbar-nav">
 	  <li class="active"><a href="#">Home</a></li>
@@ -31,33 +30,38 @@
 </nav>
 <br>
 <div class="container">
-<h2 class="text-danger"  style="text-align:center">REGISTRATION FORM</h2>
-
+<h2 class="text-danger"  style="text-align:center; color:blue">REGISTRATION FORM</h2>
+ 
 <div class="row">
+<br>
 <div class="col-sm-6">
-<form>
-  <div class="form-group">
-    <label for="email">Name:</label>
-    <input type="name" class="form-control" id="name">
+<button type="button" class="btn btn-default" onclick="Reg()">Register</button>
+<button type="button" class="btn btn-default" onclick="edit()">Edit</button>
+<button type="button" class="btn btn-default" onclick="del()">Delete</button>
+<form name="form1">
+  <div class="form-group" style="display:none" id="bname">
+    <label for="name">Name:</label>
+    <input type="name" class="form-control" id="name" >
   </div>
-  <div class="form-group">
+  <div class="form-group" style="display:none" id="bemail">
     <label for="email">EMAIL:</label>
     <input type="email" class="form-control" id="email">
   </div>
-  <div class="form-group">
+  <div class="form-group" style="display:none" id="brollno">
     <label for="rollno">Roll NO:</label>
     <input type="text" class="form-control" id="rollno">
   </div>
-  <button type="button" class="btn btn-default" onclick="abc()">Submit</button>
-  <button type="button" class="btn btn-default" onclick="xyz()">DELETE</button>
-  <button type="button" class="btn btn-default" onclick="edit()">EDIT</button>
-  <button type="button" class="btn btn-default" onclick="reset()">RESET</button>
+  <button type="button" class="btn btn-default" onclick="abc()" style="display:none" id="sub">Submit</button>
+  <button type="button" class="btn btn-default" onclick="edits()" style="display:none" id="ed">Edit</button>
+  <button type="button" class="btn btn-default" onclick="editsub()" style="display:none" id="esub">Edit</button>
+  <button type="button" class="btn btn-default" onclick="delstu()" style="display:none" id="edel">Delete</button>
+  <button type="button" class="btn btn-default" onclick="res()" style="display:none" id="res">Reset</button>
 </form>
 </div>
 </div>
 
 <br>
-<h4 class="text-danger" style="text-align:center">DATABASE</h4>
+<h4 class="text-danger" style="text-align:center; color:blue">DATABASE</h4>
 <table class="table table-hover" id="table">
 <thead>
 <th>ROLLNO:</th>
@@ -68,13 +72,13 @@
 </table>
 </div>
 <script>
-function reset()
+function res()
 {
 document.getElementById("name").innerHTML="";
 document.getElementById("email").innerHTML="";
 document.getElementById("rollno").innerHTML="";
 }
-function edit()
+function edits()
 {
 var a=document.getElementsByTagName("tr");
 var i=1;
@@ -88,8 +92,43 @@ while(i<a.length)
 	}
 	i++;
 }
+
+var frm = document.getElementsByName('form1')[0];
+frm.reset();
 }
-function xyz()
+
+function editsub()
+{
+var array=document.getElementsByTagName("tr");
+var flag=1;	
+var i=1;
+
+while(i<array.length)
+{
+	
+	var row=array[i].firstChild.innerHTML;	
+	if(row==document.getElementById("rollno").value)
+	{flag=0;}
+	i++;
+}
+if(flag==1)
+{
+window.alert("Record doesnt exist");
+}
+else
+{
+document.getElementById("bname").style.display="block";
+document.getElementById("bemail").style.display="block";
+document.getElementById("brollno").style.display="none";
+document.getElementById("ed").style.display="inline";
+document.getElementById("sub").style.display="none";
+document.getElementById("res").style.display="inline";
+document.getElementById("esub").style.display="none";
+document.getElementById("edel").style.display="none";
+}
+
+}
+function delstu()
 {
 var a=document.getElementsByTagName("tr");
 var table=document.getElementById("table");
@@ -103,6 +142,41 @@ while(i<a.length)
 	}
 	i++;
 }
+}
+
+function del()
+{
+document.getElementById("bname").style.display="none";
+document.getElementById("bemail").style.display="none";
+document.getElementById("brollno").style.display="block";
+document.getElementById("esub").style.display="none";
+document.getElementById("edel").style.display="block";
+document.getElementById("sub").style.display="none";
+document.getElementById("res").style.display="none";
+document.getElementById("ed").style.display="none";
+
+}
+function Reg()
+{
+document.getElementById("bname").style.display="block";
+document.getElementById("bemail").style.display="block";
+document.getElementById("brollno").style.display="block";
+document.getElementById("sub").style.display="inline";
+document.getElementById("res").style.display="inline";
+document.getElementById("esub").style.display="none";
+document.getElementById("edel").style.display="none";
+document.getElementById("ed").style.display="none";
+}
+function edit()
+{
+document.getElementById("bname").style.display="none";
+document.getElementById("bemail").style.display="none";
+document.getElementById("brollno").style.display="block";
+document.getElementById("esub").style.display="block";
+document.getElementById("edel").style.display="none";
+document.getElementById("sub").style.display="none";
+document.getElementById("res").style.display="none";
+document.getElementById("ed").style.display="none";
 }
 function abc()
 {
@@ -173,12 +247,12 @@ a.appendChild(m);
 var  z=document.getElementById("tbody");
 z.appendChild(a);
 
-document.getElementById("name").innerHTML="";
-document.getElementById("email").innerHTML="";
-document.getElementById("rollno").innerHTML="";
+var frm = document.getElementsByName('form1')[0];
+frm.reset();
 }
 }
 }
+
 </script>
 </body>
 </html>
