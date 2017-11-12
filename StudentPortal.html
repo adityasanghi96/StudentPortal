@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+	<div class="navbar-header">Student Portal</a>
+	</div>
+	<ul class="nav navbar-nav">
+	  <li class="active"><a href="#">Home</a></li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Information <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="#">Page 1</a></li>
+		  <li><a href="#">Page 2</a></li>
+		  <li><a href="#">Page 3</a></li>
+		</ul>
+	  </li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+	  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	</ul>
+  </div>
+</nav>
+<br>
+<div class="container">
+<h2 class="text-danger"  style="text-align:center; color:blue">REGISTRATION FORM</h2>
+ 
+<div class="row">
+<br>
+<div class="col-sm-6">
+<button type="button" class="btn btn-default" onclick="Reg()">Register</button>
+<button type="button" class="btn btn-default" onclick="edit()">Edit</button>
+<button type="button" class="btn btn-default" onclick="del()">Delete</button>
+<form name="form1">
+  <div class="form-group" style="display:none" id="bname">
+    <label for="name">Name:</label>
+    <input type="name" class="form-control" id="name" >
+  </div>
+  <div class="form-group" style="display:none" id="bemail">
+    <label for="email">EMAIL:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group" style="display:none" id="brollno">
+    <label for="rollno">Roll NO:</label>
+    <input type="text" class="form-control" id="rollno">
+  </div>
+  <button type="button" class="btn btn-default" onclick="abc()" style="display:none" id="sub">Submit</button>
+  <button type="button" class="btn btn-default" onclick="edits()" style="display:none" id="ed">Edit</button>
+  <button type="button" class="btn btn-default" onclick="editsub()" style="display:none" id="esub">Edit</button>
+  <button type="button" class="btn btn-default" onclick="delstu()" style="display:none" id="edel">Delete</button>
+  <button type="button" class="btn btn-default" onclick="res()" style="display:none" id="res">Reset</button>
+</form>
+</div>
+</div>
+
+<br>
+<h4 class="text-danger" style="text-align:center; color:blue">DATABASE</h4>
+<table class="table table-hover" id="table">
+<thead>
+<th>ROLLNO:</th>
+<th>NAME:</th>
+<th>EMAIL:</th>
+<tbody id="tbody">
+</tbody>
+</table>
+</div>
+</body>
+</html>
