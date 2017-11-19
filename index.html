@@ -1,76 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="student.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-	<div class="navbar-header">Student Portal</a>
-	</div>
-	<ul class="nav navbar-nav">
-	  <li class="active"><a href="#">Home</a></li>
-	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Information <span class="caret"></span></a>
-		<ul class="dropdown-menu">
-		  <li><a href="#">Page 1</a></li>
-		  <li><a href="#">Page 2</a></li>
-		  <li><a href="#">Page 3</a></li>
-		</ul>
-	  </li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-	  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	</ul>
-  </div>
-</nav>
-<br>
-<div class="container">
-<h2 class="text-danger"  style="text-align:center; color:blue">REGISTRATION FORM</h2>
- 
-<div class="row">
-<br>
-<div class="col-sm-6">
-<button type="button" class="btn btn-default" onclick="Reg()">Register</button>
-<button type="button" class="btn btn-default" onclick="edit()">Edit</button>
-<button type="button" class="btn btn-default" onclick="del()">Delete</button>
-<form name="form1">
-  <div class="form-group" style="display:none" id="bname">
-    <label for="name">Name:</label>
-    <input type="name" class="form-control" id="name" >
-  </div>
-  <div class="form-group" style="display:none" id="bemail">
-    <label for="email">EMAIL:</label>
-    <input type="email" class="form-control" id="email">
-  </div>
-  <div class="form-group" style="display:none" id="brollno">
-    <label for="rollno">Roll NO:</label>
-    <input type="text" class="form-control" id="rollno">
-  </div>
-  <button type="button" class="btn btn-default" onclick="abc()" style="display:none" id="sub">Submit</button>
-  <button type="button" class="btn btn-default" onclick="edits()" style="display:none" id="ed">Edit</button>
-  <button type="button" class="btn btn-default" onclick="editsub()" style="display:none" id="esub">Edit</button>
-  <button type="button" class="btn btn-default" onclick="delstu()" style="display:none" id="edel">Delete</button>
-  <button type="button" class="btn btn-default" onclick="res()" style="display:none" id="res">Reset</button>
-</form>
-</div>
-</div>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="style.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="script.js"></script>
+	</head>
+	<body>
+		<nav class="navbar">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <div class="navbar-brand" id="heading">Student Portal</div>
+			</div>
+			<ul class="nav navbar-nav">
+			  <li><a href="index.html">Home</a></li>
+			  <li><a href="#">Grade</a></li>
+			  <li><a href="#">Attendance</a></li>
+			</ul>
+		  </div>
+		</nav>
+		
+		<div class="jumbotron vertical-center" id="main">
+			<h1 id="welcome">Welcome to Registration Portal</h1>
+			<br>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#regm" >REGISTER </button>
+			<br>
+			<br>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#editm" >EDIT </button>
+			<br>
+			<br>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#delm">DELETE </button>
+		</div>
 
-<br>
-<h4 class="text-danger" style="text-align:center; color:blue">DATABASE</h4>
-<table class="table table-hover" id="table">
-<thead>
-<th>ROLLNO:</th>
-<th>NAME:</th>
-<th>EMAIL:</th>
-<tbody id="tbody">
-</tbody>
-</table>
-</div>
-</body>
+		<div class="modal fade" id="regm" role="dialog">
+			<div class="modal-dialog">			
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				  <h4 class="modal-title">Registration Form</h4>
+				</div>
+				<div class="modal-body">
+					<form name="form1">
+					  <div class="form-group" id="bname">
+						<label for="name">Name:</label>
+						<input type="name" class="form-control" id="name" >
+					  </div>
+					  <div class="form-group" id="bemail">
+						<label for="email">EMAIL:</label>
+						<input type="email" class="form-control" id="email">
+					  </div>
+					  <div class="form-group" id="brollno">
+						<label for="rollno">Roll NO:</label>
+						<input type="text" class="form-control" id="rollno">
+					  </div>
+					  <button type="button" class="btn btn-default" id="submit">Submit</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			  </div>  
+			</div>
+		</div>
+		
+		<div class="modal fade" id="editm" role="dialog">
+			<div class="modal-dialog">			
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" onclick="fn2()">&times;</button>
+				  <h4 class="modal-title">Edit Student Details</h4>
+				</div>
+				<div class="modal-body">
+					<form name="form2">
+					  <div class="form-group" id="bname2" style="display:none">
+						<label for="name2">Name:</label>
+						<input type="name" class="form-control" id="name2" >
+					  </div>
+					  <div class="form-group" id="bemail2" style="display:none">
+						<label for="email2">EMAIL:</label>
+						<input type="email" class="form-control" id="email2">
+					  </div>
+					  <div class="form-group" id="brollno2">
+						<label for="rollno2">Roll NO:</label>
+						<input type="text" class="form-control" id="rollno2">
+					  </div>
+					  <button type="button" class="btn btn-default" id="editb">Edit</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal" onclick="fn2()">Close</button>
+				</div>
+			  </div>  
+			</div>
+		</div>
+		
+		<div class="modal fade" id="delm" role="dialog">
+			<div class="modal-dialog">			
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				  <h4 class="modal-title">Delete Student Details</h4>
+				</div>
+				<div class="modal-body">
+					<form name="form3">
+					  <div class="form-group" id="brollno3">
+						<label for="rollno3">Roll NO:</label>
+						<input type="text" class="form-control" id="rollno3">
+					  </div>
+					  <button type="button" class="btn btn-default" id="delb">Delete</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			  </div>  
+			</div>
+		</div>
+		
+		
+		<div class="container" id="data">
+		<br>
+		<h1><center>Student Database</center></h1>
+		<br>
+		<table class="table table-hover table-inverse" id="table">
+			<thead>
+			<th>ROLLNO:</th>
+			<th>NAME:</th>
+			<th>EMAIL:</th>
+			</thead>
+			<tbody id="tbody"><tr><td>1510991031</td><td>Aditya Sanghi</td><td>adityasanghi96@gmail.com</td></tr><tr><td>1510991034</td><td>Airish Gupta</td><td>airishgupta25@gmail.com</td></tr></tbody>
+		</table>
+		</div>
+		
+		
+	</body>
 </html>

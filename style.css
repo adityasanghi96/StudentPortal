@@ -1,0 +1,50 @@
+body
+{
+background-color:#F69E54;
+}
+.navbar 
+{
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-bottom: 0;
+}
+#main
+{
+	display:block;
+	height:100%;
+	vertical-align:center;
+	text-align:center;
+	background-color:#D34E24;
+	
+}
+
+th
+{
+	text-align:center;
+	font-size:20px;
+	width:33%;
+}
+#td
+{
+	border-color:#222222;
+	font-size:18px;
+}
+#data
+{
+	height:100%;
+	vertical-align:center;
+	text-align:center;
+	color:black;
+	
+}
+
+a
+{
+	color:black;
+}
+
+.btn
+{
+	background-color:#222222;
+	color:white;
+}
