@@ -1,11 +1,11 @@
 let chk,c,row2;
 
-$(document).ready(function(){
+$(document).ready(()=>{
     chk=0;
 	c=0;
 });
 
-$(document).on('click', '#delb', function () 
+$(document).on('click', '#delb',()=>  
 {
 	let table=document.getElementById("table");
 	let a=document.getElementById("tbody").childNodes;
@@ -29,7 +29,7 @@ $(document).on('click', '#delb', function ()
 });
 
 
-$(document).on('click', '#editb', function () 
+$(document).on('click', '#editb', ()=> 
 {
 	if(chk==0)
 	{
@@ -96,7 +96,7 @@ $(document).on('click', '#editb', function ()
 	
 });
 
-$(document).on('click', '#submit', function () 
+$(document).on('click', '#submit', ()=> 
 {
 
 	let name=document.getElementById("name").value;
@@ -156,11 +156,10 @@ $(document).on('click', '#submit', function ()
 	}
 });
 
-function fn2()
-{
+let fn2 = () => {
 	chk=0;
 	document.getElementById("bname2").style.display="none";
 	document.getElementById("bemail2").style.display="none";
 	document.getElementById("brollno2").style.display="block";
 	document.getElementsByName('form2')[0].reset();
-}
+};
